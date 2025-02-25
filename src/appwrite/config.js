@@ -10,7 +10,7 @@ export class Service{
         this.client
         .setEndpoint(conf.appwriteUrl)
         .setProject(conf.appwriteUrlProjectID);
-    this.databases = new this.databases(this.client);    
+    this.databases = new Databases(this.client);    
     this.bucket = new Storage(this.client);
     }
 
@@ -74,17 +74,20 @@ async getPost(slug){
     }
 }
 
-async getPost(queries = [Query.equal("status", "active")]){
+async getPosts(queries = [Query.equal("status", "active")]){
     try {
-        return await.this.databases.listDocument(
-            conf.appwriteUrlDataBaseID,
-            conf.appwriteUrlCollectionID,
+        return await this.databases.listDocuments(
+            conf.appwriteDatabaseId,
+            conf.appwriteCollectionId,
             queries,
+            
         )
     } catch (error) {
-        console.log("Appwrite service:: getPost:: error", error);
+        console.log("Appwrite serive :: getPosts :: error", error);
+        return false
     }
 }
+
 
 // note: file upload methods
 
