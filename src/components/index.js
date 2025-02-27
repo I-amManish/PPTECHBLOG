@@ -6,10 +6,12 @@ import LogoutBtn from "./Header/LogoutBtn";
 import RTE from "./RTE.jsx";
 import Signup from "./Signup.jsx";
 import Login from "./Login.jsx";
-import Post from './Post'
-import PostFrom from './PostForm'
+import PostForm from '../components/PostForm/PostForm.jsx'
 import PostCard from './PostCard.jsx'
 import AuthLayout from "./AuthLayout.jsx";
+import Input from './Input.jsx'
+import Select from "./Select.jsx";
+import Button from './Button.jsx'
 
 
 export {
@@ -21,8 +23,10 @@ export {
     RTE,
     Signup,
     Login,
-    Post,
-    PostFrom,
+    PostForm,
     PostCard,
-    AuthLayout
+    AuthLayout,
+    Input,
+    Select,
+    Button
 }
